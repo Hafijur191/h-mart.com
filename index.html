@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>H-Mart.Com</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicone.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header role="banner">
+      <h1 class="visually-hidden">Base Apparel Coming Soon</h1>
+      <a href="/" title="return to the homepage" id="logo">
+        <img
+          src="https://res.cloudinary.com/gb2020/image/upload/v1589217430/base%20apparel%20coming%20soon/logo_homs80.svg"
+          alt="Base Apparel Logo"
+        />
+      </a>
+    </header>
+    <section class="side-image"></section>
+    <main class="[ main ] [ flow ]">
+      <h2>
+        <span class="heading--pink"> We're </span>
+        Coming Soon
+      </h2>
+      <p>
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our
+        launch deals.
+      </p>
+      <form action="/" class="[ form ] [ flow ]" method="POST" id="form">
+        <div class="form__control">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value=""
+            autocapitalize="none"
+            autocomplete="false"
+            autocorrect="off"
+            required
+            pattern="[^@]+@[^\.]+\..+"
+          />
+          <label for="email">Email Address</label>
+          <button class="button">
+            <span class="visually-hidden">Submit email</span>
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="20"
+            >
+              <path
+                fill="none"
+                stroke="#FFF"
+                stroke-width="2"
+                d="M1 1l8.836 8.836L1 18.671"
+              />
+            </svg>
+          </button>
+          <div class="alert_icon"></div>
+        </div>
+      </form>
+      <div aria-atomic="true" role="alert" class="form__alert"></div>
+    </main>
+    <footer>
+      <p>
+        Coded By
+        <a href="https://developerhafijur.com/" _target="blank"
+          >DeveloperHafijur.Com</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
