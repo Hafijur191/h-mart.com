@@ -74,6 +74,7 @@
                 </thead>
                 <tbody>
                     <?php
+
                    $category_sql = "SELECT * FROM mart_category";
                    $category_res = mysqli_query($db,$category_sql);
                    $serial = 0;
@@ -88,13 +89,16 @@
                     <tr>
                     <th scope="row"><?php echo $serial; ?></th>
                     <td>
-                        <img src="assets/img/products/category/<?php echo $cat_image; ?>" width="40" alt="">
+                        <img src="assets/img/products/category/<?php echo $cat_image; ?>" width="30" alt="">
                     </td>
                     <td><?php echo $cat_name; ?></td>
                     <td>
                         <?php if($cat_status == 0)echo '<span class="badge bg-danger">Inactive</span>';else echo '<span class="badge bg-success">Active</span>'; ?>
                     </td>
-                    <td>2016-05-25</td>
+                    <td>
+                        <a href=""><i class="bi bi-pencil-square text-success"></i></a>
+                        <a href=""><i class="bi bi-trash text-danger"></i></a>
+                    </td>
                   </tr>
                   <?php
                    }
