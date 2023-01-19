@@ -26,17 +26,28 @@
               <h5 class="card-title">Add New Category</h5>
 
               <!-- No Labels Form -->
-              <form class="row g-3">
+              <form class="row g-3" action="core/insert.php" method="post" enctype="multipart/form-data">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Category Name">
+                  <input type="text" class="form-control" placeholder="Category Name" name="cat_name" required>
                 </div>
                 <div class="col-md-12">
                     <label for="">Choose your parent category</label>
-                  <select id="inputState" class="form-select">
+                  <select id="inputState" class="form-select" name="c_parent">
                     <option selected="">Choose category</option>
-                    <option>Electronics</option>
-                    <option>Cloths</option>
-                    <option>Sports</option>
+                    <?php
+                    $category_sql = "SELECT * FROM mart_category WHERE c_parent='0' ORDER BY c_name ASC";
+                   $category_res = mysqli_query($db,$category_sql);
+                   while($row = mysqli_fetch_assoc($category_res)){
+                    $cat_id     = $row['ID'];
+                    $cat_name   = $row['c_name'];
+                    $cat_image  = $row['c_image'];
+                    $cat_parent = $row['c_parent'];
+                    $cat_status = $row['c_status'];
+                    ?><option value=<?php echo $cat_id;?>><?php echo $cat_name;?></option><?php
+                   }
+
+                    ?>
+                  
                   </select>
                 </div>
                 <div class="col-md-12">
@@ -48,7 +59,7 @@
                 </div>
                 </div>
                 <div class="text-start">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="add_category" class="btn btn-primary">Submit</button>
                 </div>
               </form><!-- End No Labels Form -->
 
@@ -75,7 +86,7 @@
                 <tbody>
                     <?php
 
-                   $category_sql = "SELECT * FROM mart_category";
+                   $category_sql = "SELECT * FROM mart_category WHERE c_parent='0'";
                    $category_res = mysqli_query($db,$category_sql);
                    $serial = 0;
                    while($row = mysqli_fetch_assoc($category_res)){
@@ -101,6 +112,11 @@
                     </td>
                   </tr>
                   <?php
+                  //find sub category
+                 Show_Sub_Category($cat_id);
+
+
+
                    }
                     ?>
                   
