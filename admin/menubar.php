@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="index.php">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -12,7 +12,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>E-commerce</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>E-Commerce</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -44,17 +44,17 @@
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="brand.php">
               <i class="bi bi-circle"></i><span>Brand</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Add New Products</span>
+            <a href="products.php?data=add">
+              <i class="bi bi-circle"></i><span>Add New Product</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="products.php?data=view">
               <i class="bi bi-circle"></i><span>View All Products</span>
             </a>
           </li>
@@ -65,6 +65,7 @@
         <a class="nav-link" href="#">
           <i class="bi bi-bar-chart"></i><span>Reports</span>
         </a>
+       
       </li><!-- End Charts Nav -->
 
       <li class="nav-item">
@@ -74,7 +75,7 @@
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Add New Users</span>
+              <i class="bi bi-circle"></i><span>Add New User</span>
             </a>
           </li>
           <li>
@@ -82,6 +83,7 @@
               <i class="bi bi-circle"></i><span>View All Users</span>
             </a>
           </li>
+
         </ul>
       </li>
 
