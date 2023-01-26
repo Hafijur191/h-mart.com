@@ -36,7 +36,7 @@
                             ?>
 
                                 <h5 class="card-title">Update Brand Information</h5>
-                        <form method="POST" enctype="multipart/form-data" action="core/update.php">
+                        <form method="POST" enctype="multipart/form-data" action="update.php">
                             <div class="form-group mb-4">
                                 <label>Brand Name</label>
                                 <input type="text" name="brand_name" placeholder="Enter a brand name ..." value="<?php echo $e_brand_name;?>" class="form-control" required />
