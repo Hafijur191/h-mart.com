@@ -1,5 +1,5 @@
-<?php include 'connection.php'; ?>
-<?php include 'functions.php'; ?>
+<?php include 'connection.php';?>
+<?php include 'functions.php';?>
 <?php ob_start(); ?>
 
 <!DOCTYPE html>
@@ -9,12 +9,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard Admin Bootstrap Template</title>
+  <title>Dashboard : H-Mart</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="https://developerhafijur.com/wp-content/uploads/2022/10/cropped-DeveloperHafijur.Com-512-×-512-px-2.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -32,8 +32,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/custom.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -42,9 +40,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="https://developerhafijur.com/wp-content/uploads/2022/10/cropped-DeveloperHafijur.Com-512-×-512-px-2.png" alt="">
-        <span class="d-none d-lg-block">Admin Panel</span>
+      <a href="dashboard.php" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">H-Mart.Com</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -210,12 +208,12 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">Hafijur</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
+              <h6>Hafijur</h6>
               <span>Web Designer</span>
             </li>
             <li>

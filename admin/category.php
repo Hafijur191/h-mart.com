@@ -1,5 +1,5 @@
-<?php include 'header.php'; ?>
-<?php include 'menubar.php'; ?>
+<?php include 'inc/header.php'; ?>
+<?php include 'inc/menubar.php'; ?>
 
   <main id="main" class="main">
 
@@ -31,28 +31,28 @@
                     while($row = mysqli_fetch_assoc($category_res)){
                         $ecat_name   = $row['c_name'];
                         $ecat_image = $row['c_image'];
-                        $ecat_parent = $row['c_parent'];
+                        $ecat_parent = $row['is_parent'];
                         $ecat_status = $row['c_status'];
                     }
                     // show edit form
                     ?>
                     <h5 class="card-title">Update Category</h5>
-                    <form class="row g-3" action="update.php" method="post" enctype="multipart/form-data">
+                    <form class="row g-3" action="core/update.php" method="post" enctype="multipart/form-data">
                         <div class="col-md-12">
                             <input type="text" class="form-control" value="<?php echo $ecat_name;?>" placeholder="Category Name" name="cat_name" required>
                         </div>
                         <div class="col-md-12">
                             <label>Choose your parent category if any</label>
-                            <select id="inputState" class="form-select" name="c_parent">
+                            <select id="inputState" class="form-select" name="is_parent">
                             <option>Choose...</option>
                                 <?php 
-                                $category_sql = "SELECT * FROM mart_category WHERE c_parent='0' ORDER BY c_name ASC";
+                                $category_sql = "SELECT * FROM mart_category WHERE is_parent='0' ORDER BY c_name ASC";
                                 $category_res = mysqli_query($db,$category_sql);
                                 while($row = mysqli_fetch_assoc($category_res)){
                                     $cat_id     = $row['ID'];
                                     $cat_name   = $row['c_name'];
                                     $cat_image  = $row['c_image'];
-                                    $cat_parent = $row['c_parent'];
+                                    $cat_parent = $row['is_parent'];
                                     $cat_status = $row['c_status'];
                                  ?><option value="<?php echo $cat_id;?>" <?php if($ecat_parent == $cat_id)echo 'selected';?>><?php echo $cat_name;?></option><?php
                                 }
@@ -101,16 +101,16 @@
                         </div>
                         <div class="col-md-12">
                             <label>Choose your parent category if any</label>
-                            <select id="inputState" class="form-select" name="c_parent">
+                            <select id="inputState" class="form-select" name="is_parent">
                             <option selected="">Choose...</option>
                                 <?php 
-                                $category_sql = "SELECT * FROM mart_category WHERE c_parent='0' ORDER BY c_name ASC";
+                                $category_sql = "SELECT * FROM mart_category WHERE is_parent='0' ORDER BY c_name ASC";
                                 $category_res = mysqli_query($db,$category_sql);
                                 while($row = mysqli_fetch_assoc($category_res)){
                                     $cat_id     = $row['ID'];
                                     $cat_name   = $row['c_name'];
                                     $cat_image = $row['c_image'];
-                                    $cat_parent = $row['c_parent'];
+                                    $cat_parent = $row['is_parent'];
                                     $cat_status = $row['c_status'];
                                  ?><option value="<?php echo $cat_id;?>"><?php echo $cat_name;?></option><?php
                                 }
@@ -163,14 +163,14 @@
                         <tbody>
                         <?php 
 
-                        $category_sql = "SELECT * FROM mart_category WHERE c_parent='0'";
+                        $category_sql = "SELECT * FROM mart_category WHERE is_parent='0'";
                         $category_res = mysqli_query($db,$category_sql);
                         $serial = 0;
                         while($row = mysqli_fetch_assoc($category_res)){
                             $cat_id     = $row['ID'];
                             $cat_name   = $row['c_name'];
                             $cat_image = $row['c_image'];
-                            $cat_parent = $row['c_parent'];
+                            $cat_parent = $row['is_parent'];
                             $cat_status = $row['c_status'];
                             $serial++;
 
@@ -178,7 +178,7 @@
                             <tr>
                                 <th scope="row"><?php echo $serial;?></th>
                                 <td>
-                                    <img src="assets/img/products/category/<?php echo $cat_image;?>" width="30" />
+                                    <img src="assets/img/products/category/<?php echo $cat_image;?>" width="40" />
                                 </td>
                                 <td><?php echo $cat_name;?></td>
                                 <td>
@@ -239,4 +239,4 @@
 
   </main><!-- End #main -->
 
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>

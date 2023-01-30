@@ -1,7 +1,5 @@
-<?php include 'header.php'; ?>
-<?php include 'menubar.php'; ?>
-
-
+<?php include 'inc/header.php'; ?>
+<?php include 'inc/menubar.php'; ?>
 
   <main id="main" class="main">
 
@@ -16,9 +14,9 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-      <!-- my main code here -->
+        <!-- your main code here -->
     </section>
 
   </main><!-- End #main -->
 
- <?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>

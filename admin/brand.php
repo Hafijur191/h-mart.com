@@ -1,5 +1,5 @@
-<?php include 'header.php'; ?>
-<?php include 'menubar.php'; ?>
+<?php include 'inc/header.php'; ?>
+<?php include 'inc/menubar.php'; ?>
 
   <main id="main" class="main">
 
@@ -36,7 +36,7 @@
                             ?>
 
                                 <h5 class="card-title">Update Brand Information</h5>
-                        <form method="POST" enctype="multipart/form-data" action="update.php">
+                        <form method="POST" enctype="multipart/form-data" action="core/update.php">
                             <div class="form-group mb-4">
                                 <label>Brand Name</label>
                                 <input type="text" name="brand_name" placeholder="Enter a brand name ..." value="<?php echo $e_brand_name;?>" class="form-control" required />
@@ -194,8 +194,6 @@
                  
                 </tbody>
               </table>
-
-
               <!-- End Table with hoverable rows -->
 
               <?php 
@@ -220,4 +218,4 @@
 
   </main><!-- End #main -->
 
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>

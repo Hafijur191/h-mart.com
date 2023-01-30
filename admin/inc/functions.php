@@ -4,7 +4,7 @@ include "connection.php";
 function Show_Sub_Category($cat_id){
     global $db;
 
-    $sub_cat_sql = "SELECT * FROM mart_category WHERE c_parent = '$cat_id'";
+    $sub_cat_sql = "SELECT * FROM mart_category WHERE is_parent = '$cat_id'";
     $sub_cat_Res = mysqli_query($db,$sub_cat_sql);
     while($row = mysqli_fetch_assoc($sub_cat_Res)){
         $cat_id     = $row['ID'];
@@ -16,7 +16,7 @@ function Show_Sub_Category($cat_id){
         <tr>
         <th scope="row"><?php echo '-';?></th>
         <td>
-            <img src="assets/img/products/category/<?php echo $cat_image;?>" width="30" />
+            <img src="assets/img/products/category/<?php echo $cat_image;?>" width="40" />
         </td>
         <td><?php echo '<i class="bi bi-arrow-return-right"></i> '.$cat_name;?></td>
         <td>
@@ -101,4 +101,16 @@ function delete_file($file_name,$table,$key,$file_id,$path){
     $f_name = $row[$file_name];
 
     unlink($path.$f_name);
+}
+
+
+// find values based on their id
+
+function findval($field,$table,$key,$fkey){
+    global $db;
+
+    $catName = mysqli_query($db,"SELECT $field FROM $table WHERE $key='$fkey'");
+    $row = mysqli_fetch_assoc($catName);
+    $file_name = $row[$field];
+    return $file_name;
 }

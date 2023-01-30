@@ -1,7 +1,5 @@
-<?php include 'header.php'; ?>
-<?php include 'menubar.php'; ?>
-
-
+<?php include 'inc/header.php'; ?>
+<?php include 'inc/menubar.php'; ?>
 
   <main id="main" class="main">
 
@@ -651,4 +649,4 @@
 
   </main><!-- End #main -->
 
- <?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
