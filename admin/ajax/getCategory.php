@@ -16,6 +16,7 @@ while($row = mysqli_fetch_assoc($category_res)){
     $cat_status = $row['c_status'];
 
     ?>
+    
     <input type="checkbox" value="<?php echo $cat_id;?>" name="category[]" />
     <label><?php echo $cat_name;?></label>
     <br>

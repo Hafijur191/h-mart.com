@@ -1,6 +1,13 @@
 <?php include 'connection.php';?>
 <?php include 'functions.php';?>
-<?php ob_start(); ?>
+<?php 
+ob_start(); 
+session_start();
+
+if(empty($_SESSION['email'])){
+  header('location: login.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +16,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard : H-Mart</title>
+  <title>Dashboard : C-Mart</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -42,7 +49,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="dashboard.php" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">H-Mart.Com</span>
+        <span class="d-none d-lg-block">C-Mart</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -208,12 +215,17 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Hafijur</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">
+              <?php 
+              echo findval('username','mart_users','ID',$_SESSION['id']);
+              ?>
+                
+              </span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Hafijur</h6>
+              <h6>Kevin Anderson</h6>
               <span>Web Designer</span>
             </li>
             <li>
@@ -251,7 +263,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="inc/logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
